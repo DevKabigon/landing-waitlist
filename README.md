@@ -175,9 +175,9 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Brand Name
 
-브랜드 이름은 프로젝트 생성 시 자동으로 설정됩니다. 템플릿 파일에서 `{{BRAND_NAME}}` 플레이스홀더를 사용하면 자동으로 교체됩니다.
+The brand name is automatically set when the project is created. Using the `{{BRAND_NAME}}` placeholder in template files will automatically replace it.
 
-수동으로 변경하려면:
+To change it manually:
 
 ```typescript
 // lib/brand.ts
@@ -186,24 +186,24 @@ export function getBrandName(): string {
 }
 ```
 
-**참고:** Rapid Builder에서 프로젝트를 생성할 때 입력한 브랜드 이름이 자동으로 설정됩니다.
+**Note:** The brand name you enter when creating a project in Rapid Builder is automatically set.
 
 ### Colors & Theme
 
-⚠️ **중요**: 이 템플릿은 CSS 변수를 사용합니다. 색상이나 radius 값을 하드코딩하지 마세요.
+⚠️ **Important**: This template uses CSS variables. Do not hardcode color or radius values.
 
-이 템플릿은 shadcn/ui의 프리셋 시스템을 사용합니다. shadcn/ui는 **oklch 형식**으로 CSS 변수를 자동 생성합니다. 색상은 `components.json` 설정에 따라 자동으로 적용됩니다:
+This template uses shadcn/ui's preset system. shadcn/ui automatically generates CSS variables in **oklch format**. Colors are automatically applied based on your `components.json` configuration:
 
-**권장 사용 방법:**
+**Recommended Usage:**
 
-1. **Tailwind 유틸리티 클래스** (가장 권장)
+1. **Tailwind Utility Classes** (Most Recommended)
 
    ```tsx
    <div className="bg-primary text-primary-foreground">
    <button className="bg-secondary text-secondary-foreground">
    ```
 
-2. **CSS 변수 직접 사용**
+2. **Direct CSS Variable Usage**
 
    ```css
    .custom-class {
@@ -212,12 +212,12 @@ export function getBrandName(): string {
    }
    ```
 
-3. **인라인 스타일**
+3. **Inline Styles**
    ```tsx
    <div style={{ backgroundColor: 'var(--primary)' }}>
    ```
 
-**사용 가능한 CSS 변수:**
+**Available CSS Variables:**
 
 - `--primary`, `--primary-foreground`
 - `--secondary`, `--secondary-foreground`
@@ -225,9 +225,9 @@ export function getBrandName(): string {
 - `--muted`, `--muted-foreground`
 - `--destructive`, `--destructive-foreground`
 - `--border`, `--input`, `--ring`
-- `--radius` (border-radius 값)
+- `--radius` (border-radius value)
 
-**참고:** shadcn/ui는 CSS 변수에 **oklch 형식**의 색상 값을 저장합니다 (예: `oklch(0.648 0.2 131.684)`). 따라서 `hsl(var(--primary))`처럼 감싸지 않고 `var(--primary)`를 직접 사용하면 됩니다. 모든 색상은 사용자가 선택한 테마에 따라 자동으로 변경됩니다.
+**Note:** shadcn/ui stores color values in **oklch format** in CSS variables (e.g., `oklch(0.648 0.2 131.684)`). Therefore, use `var(--primary)` directly without wrapping it like `hsl(var(--primary))`. All colors automatically change based on the theme selected by the user.
 
 ### Content Customization
 
@@ -317,7 +317,7 @@ Access the dashboard at `/dashboard` to view:
 
 3. **Add environment variables**
    - `RESEND_API_KEY` - Your Resend API key
-   - `BRAND_NAME` - ⚠️ 자동 설정됨 (Rapid Builder에서 프로젝트 생성 시 자동으로 설정됩니다)
+   - `BRAND_NAME` - ⚠️ Automatically set (automatically configured when creating a project in Rapid Builder)
 
 4. **Deploy**
    - Click "Deploy"
@@ -336,10 +336,10 @@ This template works on any platform that supports Next.js:
 
 ## 🔧 Environment Variables
 
-| Variable         | Description                                                                                              | Required |
-| ---------------- | -------------------------------------------------------------------------------------------------------- | -------- |
-| `RESEND_API_KEY` | Your Resend API key for email collection                                                                 | ✅       |
-| `BRAND_NAME`     | ⚠️ **자동 설정됨** - Rapid Builder에서 프로젝트 생성 시 자동으로 설정됩니다. 수동 설정은 선택사항입니다. | ❌       |
+| Variable         | Description                                                                                                             | Required |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- |
+| `RESEND_API_KEY` | Your Resend API key for email collection                                                                                | ✅       |
+| `BRAND_NAME`     | ⚠️ **Automatically set** - Automatically configured when creating a project in Rapid Builder. Manual setup is optional. | ❌       |
 
 ---
 
